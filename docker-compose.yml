@@ -1,0 +1,50 @@
+version: '3'
+services:
+  server:
+    image: yakumosaki/zabbix-server-mysql:latest
+    restart: always
+    ports:
+      - "10051:10051"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    env_file:
+      - env_db
+      - env_server
+    depends_on:
+      - db
+    networks:
+      - external
+      - internal
+
+  web:
+    image: yakumosaki/zabbix-web-nginx-mysql:latest
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    env_file:
+      - env_db
+      - env_web
+    depends_on:
+      - db
+    networks:
+      - external
+      - internal 
+
+  db:
+    image: mysql/mysql-server:8.0
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./mysql:/var/lib/mysql
+    env_file:
+      - env_db
+    networks:
+      - internal
+networks:
+  external:
+    internal: false
+  internal:
+    internal: true
