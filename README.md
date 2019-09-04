@@ -1,5 +1,6 @@
 # docker-zabbix-server-arm64
-zabbix-server(mysql) docker-compose file for arm64 (tested with jetson nano)
+zabbix-server(mysql) docker-compose file for arm64
+tested with jetson nano / Raspberry Pi 3B (Ubuntu 18.04LTS(arm64))
 
 ## before start 
 
@@ -13,6 +14,10 @@ mysql> create user 'root'@'%' IDENTIFIED BY 'password';
 mysql> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
 mysql> quit
 ```
+
+## load DB
+
+Load zabbix initial database schemas/tables/data or restore existing zabbix db.
 
 ## and then
 
