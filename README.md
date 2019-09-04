@@ -1,5 +1,5 @@
 # docker-zabbix-server-arm64
-zabbix-server(mysql) docker-compose file for arm64
+zabbix-server(mysql) docker-compose file for arm64  
 tested with jetson nano / Raspberry Pi 3B (Ubuntu 18.04LTS(arm64))
 
 ## before start 
