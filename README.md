@@ -52,3 +52,7 @@ ServerActive=192.168.0.100
 
 Yes, thats ok. and you can set zabbix-server specified environment values.   
 usable env values see: https://github.com/zabbix/zabbix-docker/blob/4.2/.env_srv
+
+### performance tuning
+
+Change `my.cnf` to tune mysql parameters.
