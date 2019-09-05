@@ -41,6 +41,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ./mysql:/var/lib/mysql
+      - ./my.cnf:/etc/my.cnf
     env_file:
       - env_db
     networks:
