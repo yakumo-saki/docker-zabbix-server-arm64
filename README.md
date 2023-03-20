@@ -1,3 +1,8 @@
+# deprecated
+
+zabbix official docker images are released.
+this repository is end of its role
+
 # docker-zabbix-server-arm64
 
 zabbix-server(mysql) docker-compose file for arm64  
